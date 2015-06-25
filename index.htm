@@ -8,6 +8,10 @@
     <div ng-controller="TutorialCtrl as tutorial">
         <input ng-model="name"></input>
         <h1>Hello, {{ name }}</h1>
+        <input ng-model="color"></input>
+        <font color="{{ color }}">
+            <h1>My color changes depending on what you type</h1>
+        </font>
     </div>
 </body>
 </html>
