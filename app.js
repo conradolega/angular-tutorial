@@ -1,1 +1,3 @@
-angular.module('tutorial', []);
+angular.module('tutorial', [])
+    .controller('TutorialCtrl', function TutorialCtrl() {
+    });
