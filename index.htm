@@ -14,6 +14,15 @@
             <h1>My color changes depending on what you type</h1>
         </font>
         Time: {{ data.timer }} {{ data.timer > 1 ? 'seconds' : 'second' }}
+
+        <div ng-controller="NestedCtrl as nested">
+            <input ng-model="data.name2"></input>
+            {{ data.name2 }}
+            <input ng-model="data.name"></input>
+            Hello, {{ data.name }}
+        </div>
+
+        {{ data.name2 }}
     </div>
 </body>
 </html>

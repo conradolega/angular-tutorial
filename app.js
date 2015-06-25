@@ -6,4 +6,7 @@ angular.module('angularTutorial', [])
             $timeout(updateTimer, 1000);
         };
         updateTimer();
+    })
+    .controller('NestedCtrl', function NestedCtrl($scope) {
+        $scope.data.name2 = 'Name2';
     });
