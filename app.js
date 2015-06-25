@@ -1,11 +1,11 @@
 angular.module('angularTutorial', [])
     .controller('TutorialCtrl', function TutorialCtrl($scope, $timeout) {
-        $scope.data = {};
-        var updateClock = function() {
-            $scope.data.clock = new Date();
+        $scope.data = {timer: 0};
+        var updateTimer = function() {
+            $scope.data.timer++;
             $timeout(function() {
-                updateClock();
+                updateTimer();
             }, 1000);
         };
-        updateClock();
+        updateTimer();
     });
