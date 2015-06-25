@@ -3,9 +3,7 @@ angular.module('angularTutorial', [])
         $scope.data = {timer: 0};
         var updateTimer = function() {
             $scope.data.timer++;
-            $timeout(function() {
-                updateTimer();
-            }, 1000);
+            $timeout(updateTimer, 1000);
         };
         updateTimer();
     });
