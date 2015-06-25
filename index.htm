@@ -7,22 +7,10 @@
 </head>
 <body ng-app="angularTutorial">
     <div ng-controller="TutorialCtrl as tutorial">
-        <input ng-model="data.name"></input>
-        <h1>Hello, {{ data.name }}</h1>
-        <input ng-model="data.color"></input>
-        <font color="{{ data.color }}">
-            <h1>My color changes depending on what you type</h1>
-        </font>
-        Time: {{ data.timer }} {{ data.timer > 1 ? 'seconds' : 'second' }}
-
-        <div ng-controller="NestedCtrl as nested">
-            <input ng-model="data.name2"></input>
-            {{ data.name2 }}
-            <input ng-model="data.name"></input>
-            Hello, {{ data.name }}
-        </div>
-
-        {{ data.name2 }}
+        <h2>This is a list</h2>
+        <ul ng-repeat="food in foods">
+            <li>{{ food.name }}</li>
+        </ul>
     </div>
 </body>
 </html>
