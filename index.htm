@@ -11,7 +11,7 @@
         Search: <input type="text" ng-model="search">
         <ul>
             <li ng-repeat="food in foods | filter:search">
-                {{ food.name }} (Rating: {{ food.rating | showStars }})
+                <food></food>
             </li>
         </ul>
     </div>

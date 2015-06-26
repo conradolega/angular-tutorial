@@ -18,6 +18,12 @@ angular.module('angularTutorial', [])
             return rating > 0 ? new Array(rating + 1).join('*') : 'N/A';
         };
      })
+    .directive('food', function() {
+        return {
+            restrict: 'E',
+            template: '<div>{{ food.name }} (Rating: {{ food.rating | showStars }})</div>'
+        };
+    })
     .controller('TutorialCtrl', function TutorialCtrl($scope, $timeout, Data) {
         $scope.foods = Data;
     })
