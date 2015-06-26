@@ -21,7 +21,15 @@ angular.module('angularTutorial', [])
     .directive('food', function() {
         return {
             restrict: 'E',
-            template: '<div>{{ food.name }} (Rating: {{ food.rating | showStars }})</div>'
+            template: '<div>{{ food.name }} (Rating: {{ food.rating | showStars }})</div>',
+            link: function(scope, element) {
+                element.bind('mouseenter', function() {
+                    element.css('font-weight', 'bold');
+                });
+                element.bind('mouseleave', function() {
+                    element.css('font-weight', 'normal');
+                });
+            }
         };
     })
     .controller('TutorialCtrl', function TutorialCtrl($scope, $timeout, Data) {
