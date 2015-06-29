@@ -38,8 +38,20 @@ angular.module('angularTutorial', [])
             }
         };
     })
+    .directive('isolated', function() {
+        return {
+            restrict: 'A',
+            replace: true,
+            scope: {},
+            template: '<h2>{{ name }}</h2>',
+            link: function(scope, element) {
+                scope.name = 'Isolated';
+            }
+        };
+    })
     .controller('TutorialCtrl', function TutorialCtrl($scope, Data) {
         $scope.foods = Data;
+        $scope.name = 'Outside';
         $scope.add = function() {
             var newItem = angular.copy($scope.newItem);
             Data.add(newItem);
