@@ -14,6 +14,13 @@
                 <food></food>
             </li>
         </ul>
+
+        <h2>Add an item:</h2>
+        <form ng-submit="add()">
+            <input type="text" name="model" ng-model="newItem.name" placeholder="Name" required>
+            <input type="number" name="rating" ng-model="newItem.rating" placeholder="Rating" required>
+            <input type="submit">
+        </form>
     </div>
 </body>
 </html>

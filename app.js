@@ -40,5 +40,8 @@ angular.module('angularTutorial', [])
     })
     .controller('TutorialCtrl', function TutorialCtrl($scope, Data) {
         $scope.foods = Data;
+        $scope.add = function() {
+            Data.add($scope.newItem);
+        };
     })
 
