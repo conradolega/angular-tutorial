@@ -1,6 +1,6 @@
 angular.module('angularTutorial', [])
     .factory('Data', function() {
-        return [
+        var data = [
             {name: 'CASAA', rating: 4},
             {name: 'Shopping Center', rating: 4},
             {name: 'Lutong Bahay', rating: 3},
@@ -12,6 +12,12 @@ angular.module('angularTutorial', [])
             {name: 'Beach House', rating: 4},
             {name: 'Snack Shack', rating: 4}
         ];
+
+        data.add = function(item) {
+            data.push(item);
+        }
+
+        return data;
     })
     .filter('showStars', function() {
         return function(rating) {
