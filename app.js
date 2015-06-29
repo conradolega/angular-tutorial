@@ -42,11 +42,10 @@ angular.module('angularTutorial', [])
         return {
             restrict: 'A',
             replace: true,
-            scope: {},
-            template: '<h2>{{ name }}</h2>',
-            link: function(scope, element) {
-                scope.name = 'Isolated';
-            }
+            scope: {
+                name: '@',
+            },
+            template: '<h2 name="Isolated">{{ name }}</h2>',
         };
     })
     .controller('TutorialCtrl', function TutorialCtrl($scope, Data) {
