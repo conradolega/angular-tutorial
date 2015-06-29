@@ -43,9 +43,12 @@ angular.module('angularTutorial', [])
             restrict: 'A',
             replace: true,
             scope: {
-                name: '@',
+                name: '=',
             },
-            template: '<h2 name="Isolated">{{ name }}</h2>',
+            template: '<div>\
+                Inside: <input type="text" ng-model="name">\
+                <h2>{{ name }}</h2>\
+            </div>',
         };
     })
     .controller('TutorialCtrl', function TutorialCtrl($scope, Data) {
