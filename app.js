@@ -43,17 +43,20 @@ angular.module('angularTutorial', [])
             restrict: 'A',
             replace: true,
             scope: {
-                name: '=',
+                action: '&',
             },
             template: '<div>\
                 Inside: <input type="text" ng-model="name">\
-                <h2>{{ name }}</h2>\
+                <button ng-click="action({name:name})">Reverse</button>\
             </div>',
         };
     })
     .controller('TutorialCtrl', function TutorialCtrl($scope, Data) {
         $scope.foods = Data;
         $scope.name = 'Outside';
+        $scope.reverse = function(name) {
+            alert(name.split('').reverse().join(''));
+        }
         $scope.add = function() {
             var newItem = angular.copy($scope.newItem);
             Data.add(newItem);
