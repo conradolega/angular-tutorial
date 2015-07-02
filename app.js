@@ -5,6 +5,9 @@ angular.module('angularTutorial', ['ngRoute'])
                 templateUrl: 'views/main.htm',
                 controller: 'TutorialCtrl'
             })
+            .when('/other', {
+                templateUrl: 'views/otherview.htm'
+            });
     }])
     .factory('Data', function() {
         var data = [
