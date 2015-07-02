@@ -1,4 +1,11 @@
-angular.module('angularTutorial', [])
+angular.module('angularTutorial', ['ngRoute'])
+    .config(['$routeProvider', function($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/main.htm',
+                controller: 'TutorialCtrl'
+            })
+    }])
     .factory('Data', function() {
         var data = [
             {name: 'CASAA', rating: 4},
