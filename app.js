@@ -1,5 +1,9 @@
 angular.module('angularTutorial', ['ngRoute'])
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.htm',
@@ -7,6 +11,9 @@ angular.module('angularTutorial', ['ngRoute'])
             })
             .when('/other', {
                 templateUrl: 'views/otherview.htm'
+            })
+            .otherwise({
+                redirectTo: '/'
             });
     }])
     .factory('Data', function() {
